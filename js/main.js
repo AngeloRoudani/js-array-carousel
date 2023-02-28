@@ -49,15 +49,21 @@ nextDom.addEventListener('click' ,
             imagesDom[imageActive].classList.remove('show');
             imageActive++;
             imagesDom[imageActive].classList.add('show');
+
+            if (imageActive == imagesDom.lenght -1) {
+                nextDom.classList.add('hidden')
+            }
+
+            console.log (nextDom);
         }
 
     }
 )
 
-nextDom.addEventListener('click' , 
+prevDom.addEventListener('click' , 
 
     function() {
-        if (imageActive > imagesDom.length - 1) {
+        if (imageActive > 0) {
             imagesDom[imageActive].classList.remove('show');
             imageActive--;
             imagesDom[imageActive].classList.add('show');

@@ -54,3 +54,8 @@
     top: 100px;
     left: 50%
 }
+
+.btn.hidden {
+    display: none;
+
+}
