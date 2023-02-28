@@ -50,7 +50,9 @@ nextDom.addEventListener('click' ,
             imageActive++;
             imagesDom[imageActive].classList.add('show');
 
-            if (imageActive == imagesDom.lenght -1) {
+            prevDom.classList.remove('hidden')
+
+            if (imageActive == imagesDom.length -1) {
                 nextDom.classList.add('hidden')
             }
 
@@ -67,6 +69,12 @@ prevDom.addEventListener('click' ,
             imagesDom[imageActive].classList.remove('show');
             imageActive--;
             imagesDom[imageActive].classList.add('show');
+
+            nextDom.classList.remove('hidden')
+
+            if (imageActive == 0) {
+                prevDom.classList.add('hidden')
+            }
         }
 
     }

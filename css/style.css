@@ -55,7 +55,11 @@
     left: 50%
 }
 
-.btn.hidden {
+.next.hidden {
     display: none;
 
+}
+
+.prev.hidden {
+    display: none;
 }
