@@ -45,17 +45,20 @@ const prevDom = document.querySelector('.prev')
 nextDom.addEventListener('click' , 
     
     function() {
+            
         if (imageActive < imagesDom.length -1) {
             imagesDom[imageActive].classList.remove('show');
             imageActive++;
             imagesDom[imageActive].classList.add('show');
 
             console.log (nextDom);
-
             if (imageActive == imagesDom.length -1) {
-                imageActive = 0;
+                imagesDom[imageActive].classList.remove('show');
+                imageActive = 0
+                imagesDom[imageActive].classList.add('show');
             }
         }
+
 
     }
 )
@@ -68,7 +71,12 @@ prevDom.addEventListener('click' ,
             imageActive--;
             imagesDom[imageActive].classList.add('show');
 
-        
+            if (imageActive == imagesDom.length -1) {
+                imagesDom[imageActive].classList.remove('show');
+                imageActive = 0
+                imageActive--;
+                imagesDom[imageActive].classList.add('show');
+            }
         }
 
     }
