@@ -13,15 +13,17 @@ for (let i = 1; i <= 5; i++) {
 console.log(imagesList);
 
 
-const sliderDom = document.querySelector('slider');
+const sliderDom = document.querySelector('.slider');
 
 let sliderContent = "";
 
-for (let i = 1; i <= imagesList.lenght; i++) {
-    const imageWrapper = `<div class="images">
-                            <img class="photo" src="${imagesList[i]}" alt="prima immagine">
-                          </div> `
-    sliderContent += imageWrapper;                          
-}
+for (let i = 0; i < imagesList.length; i++) {
+    const imageWrapper = `<div class="images"> ciao
+                            <img class="photo" src="${imagesList[i]}" alt="immagine"/>
+                          </div> `;
 
-sliderDom.innerHTML = sliderContent
+    sliderContent += imageWrapper;   
+    console.log ("slider:" + imageWrapper);                      
+} 
+
+sliderDom.innerHTML = sliderContent;

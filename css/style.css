@@ -13,7 +13,7 @@
 .slider {
     height: 50vh;
     margin: 25vh 0px;
-    display: none;
+   /* display: none;*/
 }
 
 .photo {
