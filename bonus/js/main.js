@@ -37,6 +37,7 @@ imagesDom[imageActive].classList.add('show'); // immetto la classe (show) per re
 console.log(imagesDom);
 
 // creo un ascoltatore di eventi per cliccare sui pulsanti e far slittare la classe (show)
+// all'infinito...
 
 const nextDom = document.querySelector('.next')
 
@@ -46,21 +47,21 @@ nextDom.addEventListener('click' ,
     
     function() {
             
-        if (imageActive < imagesDom.length -1) {
+        if (imageActive < imagesDom.length - 1) {
             imagesDom[imageActive].classList.remove('show');
             imageActive++;
             imagesDom[imageActive].classList.add('show');
 
             console.log (nextDom);
-            if (imageActive == imagesDom.length -1) {
-                imagesDom[imageActive].classList.remove('show');
-                imageActive = 0
-                imagesDom[imageActive].classList.add('show');
-            }
+        
+        } else if (imageActive == imagesDom.length - 1) {
+            imagesDom[imageActive].classList.remove('show');
+            imageActive = 0;
+            imagesDom[imageActive].classList.add('show');
         }
-
-
+    
     }
+    
 )
 
 prevDom.addEventListener('click' , 
@@ -71,12 +72,11 @@ prevDom.addEventListener('click' ,
             imageActive--;
             imagesDom[imageActive].classList.add('show');
 
-            if (imageActive == imagesDom.length -1) {
-                imagesDom[imageActive].classList.remove('show');
-                imageActive = 0
-                imageActive--;
-                imagesDom[imageActive].classList.add('show');
-            }
+        } else if (imageActive == 0) {
+            imagesDom[imageActive].classList.remove('show');
+            imageActive = imagesDom.length - 1;
+            imagesDom[imageActive].classList.add('show');
+
         }
 
     }
