@@ -54,6 +54,12 @@
     height: calc(100% / 5);
     object-fit: cover;
     display: block;
+    filter: opacity(60%);
+}
+
+.border_photo {
+    border: solid 1px violet;
+    filter: none;
 }
 
 .btn {
