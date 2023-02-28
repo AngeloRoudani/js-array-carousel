@@ -10,11 +10,18 @@
     margin: auto;
 }
 
+.container_slider {
+    height: 50vh;
+    margin: 25vh 0px;
+    position: relative;
+}
+
 .slider {
     height: 50vh;
     margin: 25vh 0px;
     position: relative;
 }
+
 
 .images {
     width: 100%;
@@ -29,6 +36,23 @@
 }
 
 .show {
+    display: block;
+}
+
+.thumbnails {
+    height: 100%;
+    width: 15%;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.photo_thumb {
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
     display: block;
 }
 

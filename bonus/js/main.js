@@ -25,8 +25,23 @@ for (let i = 0; i < imagesList.length; i++) { //introduco le immagini dinamicame
     sliderContent += imageWrapper;   
     console.log ("slider:" + imageWrapper);                      
 } 
-
 sliderDom.innerHTML = sliderContent;
+
+//immetto HTML di thumbnails
+const thumbDom = document.querySelector('.thumbnails');
+
+let thumbContent = "";
+
+
+for (let i = 0; i < imagesList.length; i++) { //introduco le immagini dinamicamente nel thumbDom
+    const thumbPhoto = `<img class="photo_thumb" src="${imagesList[i]}" alt="immagine"/>`;
+
+    thumbContent += thumbPhoto;   
+    console.log ("slider:" + thumbDom);                      
+} 
+
+thumbDom.innerHTML = thumbContent;
+
 
 const imagesDom = document.getElementsByClassName('images'); // prendo tutte le immagini
 
