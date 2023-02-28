@@ -6,19 +6,19 @@
 
 const imagesList = []
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 5; i++) { // creo un array delle immagini
     imagesList.push('img/'+ i +'.webp')
 }
 
 console.log(imagesList);
 
 
-const sliderDom = document.querySelector('.slider');
+const sliderDom = document.querySelector('.slider'); // faccio riferimento allo slider
 
 let sliderContent = "";
 
-for (let i = 0; i < imagesList.length; i++) {
-    const imageWrapper = `<div class="images"> ciao
+for (let i = 0; i < imagesList.length; i++) { //introduco le immagini dinamicamente nello slider
+    const imageWrapper = `<div class="images">
                             <img class="photo" src="${imagesList[i]}" alt="immagine"/>
                           </div> `;
 
@@ -27,3 +27,44 @@ for (let i = 0; i < imagesList.length; i++) {
 } 
 
 sliderDom.innerHTML = sliderContent;
+
+const imagesDom = document.getElementsByClassName('images'); // prendo tutte le immagini
+
+let imageActive = 0;
+
+imagesDom[imageActive].classList.add('show'); // immetto la classe (show) per rendere visibile la prima immagine
+
+console.log(imagesDom);
+
+// creo un ascoltatore di eventi per cliccare sui pulsanti e far slittare la classe (show)
+
+const nextDom = document.querySelector('.next')
+
+const prevDom = document.querySelector('.prev')
+
+nextDom.addEventListener('click' , 
+
+    function() {
+        if (imageActive < imagesDom.length - 1) {
+            imagesDom[imageActive].classList.remove('show');
+            imageActive++;
+            imagesDom[imageActive].classList.add('show');
+        }
+
+    }
+)
+
+nextDom.addEventListener('click' , 
+
+    function() {
+        if (imageActive > imagesDom.length - 1) {
+            imagesDom[imageActive].classList.remove('show');
+            imageActive--;
+            imagesDom[imageActive].classList.add('show');
+        }
+
+    }
+)
+
+
+
