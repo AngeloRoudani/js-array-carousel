@@ -6,12 +6,22 @@
 
 const imagesList = []
 
-for ( i = 1; i <= 5; i++) {
+for (let i = 1; i <= 5; i++) {
     imagesList.push('img/'+ i +'.webp')
 }
 
-const containerDom = document.querySelector('container');
+console.log(imagesList);
 
-let sliderDom = "";
 
-for ( i = 1; i <= imagesList.lenght; i++)
+const sliderDom = document.querySelector('slider');
+
+let sliderContent = "";
+
+for (let i = 1; i <= imagesList.lenght; i++) {
+    const imageWrapper = `<div class="images">
+                            <img class="photo" src="${imagesList[i]}" alt="prima immagine">
+                          </div> `
+    sliderContent += imageWrapper;                          
+}
+
+sliderDom.innerHTML = sliderContent
